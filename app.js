@@ -1,23 +1,24 @@
-var express = require("express");
+var express = require('express');
 
 var app = express();
 
 var PORT = 4000;
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.use(express.static("src/views"));
+app.use(express.static('src/views'));
 
-app.get("/",function(request,response)
+app.get('/',function(request,response)
 {
-response.render("index.html");
+    response.render('index.html');
 });
 
-app.get("/books",function(request,response)
+app.get('/books',function(request,response)
 {
-response.send("Hello books");
+    response.send('Hello books');
 });
 
 app.listen(PORT,function (err) {
-	console.log("server running at PORT : "+PORT);
+    console.log('server running at PORT : ' + PORT);
+
 });
