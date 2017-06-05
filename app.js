@@ -4,9 +4,13 @@ var app = express();
 
 var PORT = 4000;
 
+app.use(express.static("public"));
+
+app.use(express.static("src/views"));
+
 app.get("/",function(request,response)
 {
-response.send("Hello world");
+response.render("index.html");
 });
 
 app.get("/books",function(request,response)
