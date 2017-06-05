@@ -1,5 +1,5 @@
 {
-  "name": "expressstartup",
+  "name": "express",
   "version": "0.0.1",
   "description": "\"Learn express Installation basics by doing\"",
   "main": "app.js",
@@ -7,10 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express.git"
-  },
+  "repository": "git+https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express.git",
   "author": "Aswath",
   "license": "MIT",
   "bugs": {
@@ -18,6 +15,7 @@
   },
   "homepage": "https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.15.3"
   }
 }

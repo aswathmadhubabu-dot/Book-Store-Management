@@ -1,0 +1,21 @@
+{
+  "name": "expressstartup",
+  "description": "\"Learn express Installation basics by doing\"",
+  "main": "app.js",
+  "authors": [
+    "Aswath"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
