@@ -17,5 +17,12 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.2.1"
   }
 }
