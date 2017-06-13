@@ -2,25 +2,18 @@ var express = require('express');
 
 var app = express();
 
-var PORT = 4000;
+var port = process.env.PORT || 4000;
 
-var bookRouter = express.Router();
+var bookRouter = require('./src/routes/bookRoutes');
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.set('views','./src/views');
 
 app.set('view engine','ejs');
 
-bookRouter.route('/').get(function(request,response) {
-    response.render('book',{title : 'Books',
-        nav : [{Link:'/authors',Text:'Authors'}]
-    });
-});
+app.use('/books',bookRouter);
 
-bookRouter.route('/single').get(function(request,response) {
-    response.send('Hello ! Books');
-});
 app.get('/',function(request,response)
 {
     response.render('index',{title : 'Books and Authors',
@@ -28,9 +21,9 @@ app.get('/',function(request,response)
     });
 });
 
-app.use('/books',bookRouter);
 
-app.listen(PORT,function (err) {
-    console.log('server running at PORT : ' + PORT);
+
+app.listen(port,function (err) {
+    console.log('server running at PORT : ' + port);
 
 });
