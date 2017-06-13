@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "build": "gulp style"
   },
   "repository": "git+https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express.git",
   "author": "Aswath",
@@ -16,6 +17,16 @@
   "homepage": "https://github.com/ASES573/WebApps-WIth-Nodejs-and-Express#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "express": "^4.15.3"
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
   }
 }
