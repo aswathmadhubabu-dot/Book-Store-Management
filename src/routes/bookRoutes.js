@@ -1,5 +1,7 @@
 var express = require('express');
 
+var sql = require('mssql');
+
 var bookRouter = express.Router();
 
 var books = [
@@ -40,20 +42,40 @@ var books = [
         "read": true
     }
 ];
-bookRouter.route('/').get(function(request,response) {
-    response.render('book',{title : 'Books',
+
+var result;
+
+bookRouter.route('/').get(function(req,res) {
+   
+   var request = new sql.Request();
+
+   request.query('select * from books',function(err,recordset){
+    console.log(recordset);
+    var result = recordset["recordset"];
+    res.render('book',{title : 'Book',
         nav : [{Link:'/authors',Text:'Authors'}],
-        Books : books
+        Books : result
     });
+   });
+
+    
+
 });
 
-bookRouter.route('/:id').get(function(request,response) {
-     var id = request.params.id;
-     
-     response.render('bookView',{title : 'Book',
+bookRouter.route('/:id').get(function(req,res) {
+     var id = req.params.id;
+     // var ps = new sql.PreparedStatement();
+     // ps.input('id',sql.int)
+     var request = new sql.Request();
+    request.query('select * from books where id = '+id,function(err,recordset){
+    console.log(recordset["recordset"][0]);
+    var result2 = recordset["recordset"];
+     res.render('bookView',{title : 'Book',
         nav : [{Link:'/authors',Text:'Authors'}],
-        Book : books[id]
+        Book : result2[0]
     });
+ });
+    
 });
 
 module.exports = bookRouter;
