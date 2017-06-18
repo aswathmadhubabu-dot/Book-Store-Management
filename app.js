@@ -27,6 +27,8 @@ var port = process.env.PORT || 4000;
 
 var bookRouter = require('./src/routes/bookRoutes');
 
+var adminRouter = require('./src/routes/adminRoutes');
+
 app.use(express.static(__dirname + '/public'));
 
 app.set('views','./src/views');
@@ -34,6 +36,8 @@ app.set('views','./src/views');
 app.set('view engine','ejs');
 
 app.use('/books',bookRouter);
+
+app.use('/admin',adminRouter);
 
 app.get('/',function(req,res)
 {

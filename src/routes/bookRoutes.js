@@ -64,8 +64,6 @@ bookRouter.route('/').get(function(req,res) {
 
 bookRouter.route('/:id').get(function(req,res) {
      var id = req.params.id;
-     // var ps = new sql.PreparedStatement();
-     // ps.input('id',sql.int)
      var request = new sql.Request();
     request.query('select * from books where id = '+id,function(err,recordset){
     console.log(recordset["recordset"][0]);
