@@ -1,8 +1,15 @@
 var express = require('express');
 
+var bodyParser = require('body-parser');
+
 var app = express();
 
 var sql = require('mssql');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json({ type: 'application/*+json'}));
 
 var sqlConfig = {
     'user': 'sa',
@@ -29,6 +36,8 @@ var bookRouter = require('./src/routes/bookRoutes');
 
 var adminRouter = require('./src/routes/adminRoutes');
 
+var authRouter = require('./src/routes/authRoutes');
+
 app.use(express.static(__dirname + '/public'));
 
 app.set('views', './src/views');
@@ -38,6 +47,8 @@ app.set('view engine', 'ejs');
 app.use('/books', bookRouter);
 
 app.use('/admin', adminRouter);
+
+app.use('/auth',authRouter);
 
 app.get('/', function(req, res) {
     res.render('index', {

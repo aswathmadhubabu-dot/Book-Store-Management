@@ -18,8 +18,86 @@
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+    .form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+  </style>
+
   </head>
-  <body>
+    <body>
     <header class="navbar navbar-bright navbar-fixed-top" role="banner">
       <div class="container">
         <div class="navbar-header">
@@ -90,102 +168,29 @@
               <div class="row">
                 <br>
                 <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
+                 
                 </div>
                 <div class="col-md-10 col-sm-9">
-                  <h3>Repurpose Content to Reach a Wider Audience</h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4><span class="label label-default">97thfloor.com</span></h4>
-                      <h4>
-                        <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
-                      </h4>
-                    </div>
-                    <div class="col-xs-3"></div>
-                  </div>
-                  <br><br>
+                  <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign in to continue </h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+                <form class="form-signin" name="signupform" action="/auth/signUp" method="post">
+                <input type="text" class="form-control" id="userName" placeholder="Username" name="username" required autofocus>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="SignUp">SiGN Up
+                </button>
+                
+                
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3>14 Useful Sites for Designers</h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4><span class="label label-default">devgarage.com</span></h4>
-                      <h4>
-                        <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                      </h4>
-                    </div>
-                    <div class="col-xs-3"></div>
-                  </div>
-                  <br><br>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3>Measuring Your Link Building with Google Analytics</h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4><span class="label label-default">searchenginewatch.com</span></h4>
-                      <h4>
-                        <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                      </h4>
-                    </div>
-                    <div class="col-xs-3"></div>
-                  </div>
-                  <br><br>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3>Dramatically Raise the Value of Any Piece of Content with These 27 Tactics</h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4><span class="label label-default">searchenginewatch.com</span></h4>
-                      <h4>
-                        <small style="font-family:courier,'new courier';" class="text-muted">2 days ago • <a href="#" class="text-muted">Read More</a></small>
-                      </h4>
-                    </div>
-                    <div class="col-xs-3"></div>
-                  </div>
-                  <br><br>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3>TrendPaper - What's Trending in the World</h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4><span class="label label-default">betali.st</span></h4>
-                      <h4>
-                        <small style="font-family:courier,'new courier';" class="text-muted">Last week • <a href="#" class="text-muted">Read More</a></small>
-                      </h4>
-                    </div>
-                    <div class="col-xs-3"></div>
-                  </div>
-                  <br><br>
-                </div>
-              </div>
               <hr>
               <!--/stories-->
               <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
