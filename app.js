@@ -4,22 +4,22 @@ var app = express();
 
 var sql = require('mssql');
 
-var sqlConfig =  {
+var sqlConfig = {
     'user': 'sa',
     'password': 'Ases573@gmail.com',
     'server': "ASWATH\\SQLEXPRESS", // You can use 'localhost\\instance' to connect to named instance
     'database': 'Book',
     'dialect': "mssql",
-	'port': 1433,
-			'dialectOptions': {
-			"instanceName": 'SQLEXPRESS'
-			},
-    
-   
-   
+    'port': 1433,
+    'dialectOptions': {
+        "instanceName": 'SQLEXPRESS'
+    },
+
+
+
 };
 
-sql.connect(sqlConfig,function(err) {
+sql.connect(sqlConfig, function(err) {
     console.log(err);
 });
 
@@ -31,22 +31,28 @@ var adminRouter = require('./src/routes/adminRoutes');
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('views','./src/views');
+app.set('views', './src/views');
 
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
-app.use('/books',bookRouter);
+app.use('/books', bookRouter);
 
-app.use('/admin',adminRouter);
+app.use('/admin', adminRouter);
 
-app.get('/',function(req,res)
-{
-    res.render('index',{title : 'Books and Authors',
-        nav : [{Link:'/books',Text :'Books'},{Link:'/authors',Text:'Authors'}]
+app.get('/', function(req, res) {
+    res.render('index', {
+        title: 'Books and Authors',
+        nav: [{
+            Link: '/books',
+            Text: 'Books'
+        }, {
+            Link: '/authors',
+            Text: 'Authors'
+        }]
     });
 });
 
-app.listen(port,function (err) {
+app.listen(port, function(err) {
     console.log('server running at PORT : ' + port);
 
 });
