@@ -4,6 +4,8 @@ var authRouter = express.Router();
 
 var mongodb = require('mongodb').MongoClient();
 
+var passport = require('passport');
+
 authRouter.route('/signUp').post(function(req, res) {
 	console.log(req.body.username);
 	var url = 'mongodb://localhost:27017/libraryApp';
@@ -22,6 +24,11 @@ authRouter.route('/signUp').post(function(req, res) {
 	});
 
 
+});
+authRouter.route('/signIn').post(passport.authenticate('local', {
+	failureRedirect: '/'
+}), function(req, res) {
+	res.redirect('/auth/profile');
 });
 
 
