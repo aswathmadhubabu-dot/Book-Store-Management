@@ -27,6 +27,8 @@ app.use(session({
 
 require('./src/config/passport')(app);
 
+require('./src/strategies/local.strategy');
+
 var sqlConfig = {
     'user': 'sa',
     'password': 'Ases573@gmail.com',
