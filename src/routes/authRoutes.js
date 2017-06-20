@@ -4,12 +4,7 @@ var mongodb = require('mongodb').MongoClient();
 var passport = require('passport');
 var bodyParser = require('body-parser');
 
-authRouter.use(function(req, res, next) {
-    if (!req.user) {
-        res.redirect('/');
-    }
-    next();
-});
+
 authRouter.route('/signUp').post(function(req, res) {
 	console.log(req.body.username);
 	var url = 'mongodb://localhost:27017/libraryApp';
