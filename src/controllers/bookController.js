@@ -1,3 +1,5 @@
+var mongodb = require('mongodb').MongoClient;
+var objectId = require('mongodb').ObjectID;
 var bookController = function(bookService) {
 	var getIndex = function(req, res) {
 		var url = 'mongodb://localhost:27017/libraryApp';
@@ -42,3 +44,4 @@ var bookController = function(bookService) {
 		getById: getById
 	}
 }
+module.exports = bookController;
