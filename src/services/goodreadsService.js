@@ -1,12 +1,13 @@
-var goodreadsService = function(){
+var goodreadsService = function() {
 
-	var getBookById = function(id,cb){
-		cb(null,{description : "Our Desc"})
+	var getBookById = function(id, cb) {
+		cb(null, {
+			description: 'Our Desc'
+		});
 	};
-	return
-	{
-		getBookById : getBookById
-	}
+	return {
+		getBookById: getBookById
+	};
 };
 
 module.exports = goodreadsService;
