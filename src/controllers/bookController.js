@@ -32,15 +32,18 @@ var bookController = function(bookService) {
 					_id: id
 				},
 				function(err, results) {
-					console.log(results);
-					res.render('bookView', {
+					bookService.getBookById(results.bookId,{
+						res.render('bookView', {
 						title: 'Book',
 						nav: [{
 							Link: '/authors',
 							Text: 'Authors'
 						}],
 						Book: results
-					});
+					});	
+					})
+					console.log(results);
+					
 				}
 			);
 		});
