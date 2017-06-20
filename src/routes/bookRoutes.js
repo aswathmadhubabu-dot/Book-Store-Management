@@ -11,6 +11,6 @@ bookRouter.use(function(req, res, next) {
     next();
 });
 var bookController = require('../controllers/bookController')(null);
-bookRouter.route('/').get(bookController.getIndex());
-bookRouter.route('/:id').get(bookController.getById());
+bookRouter.route('/').get(bookController.getIndex);
+bookRouter.route('/:id').get(bookController.getById);
 module.exports = bookRouter;
