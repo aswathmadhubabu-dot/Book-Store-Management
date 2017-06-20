@@ -32,8 +32,19 @@ var bookController = function(bookService) {
 					_id: id
 				},
 				function(err, results) {
-					bookService.getBookById(results.bookId, function(err, book) {
-						results.book = book;
+					if (results.bookId) {
+						bookService.getBookById(results.bookId, function(err, book) {
+							results.book = book;
+							res.render('bookView', {
+								title: 'Book',
+								nav: [{
+									Link: '/authors',
+									Text: 'Authors'
+								}],
+								Book: results
+							});
+						})
+					} else {
 						res.render('bookView', {
 							title: 'Book',
 							nav: [{
@@ -42,7 +53,8 @@ var bookController = function(bookService) {
 							}],
 							Book: results
 						});
-					})
+					}
+
 					console.log(results);
 
 				}
