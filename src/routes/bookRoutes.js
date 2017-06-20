@@ -3,12 +3,13 @@ var sql = require('mssql');
 var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var bookRouter = express.Router();
+var bookController = require('../controllers/bookController');
 bookRouter.use(function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
     }
     next();
 });
-bookRouter.route('/').get();
-bookRouter.route('/:id').get();
+bookRouter.route('/').get(bookController.getIndex(null));
+bookRouter.route('/:id').get(bookController.getById(null));
 module.exports = bookRouter;
