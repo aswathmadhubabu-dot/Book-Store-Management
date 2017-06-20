@@ -12,7 +12,8 @@ var books = [{
     "isbn": "1400079276",
     "price": 13.45,
     "title": "Kafka on the Shore",
-    "read": false
+    "read": false,
+    "bookId":4929
 }, {
     "author": "Charles  sf Bukowski",
     "genre": "Fiction",
@@ -20,7 +21,8 @@ var books = [{
     "isbn": "1852272007",
     "price": 22.48,
     "title": "Pulp",
-    "read": false
+    "read": false,
+    "bookId":141526
 }, {
     "author": "Haruki Muraka dmi",
     "genre": "Fiction",
