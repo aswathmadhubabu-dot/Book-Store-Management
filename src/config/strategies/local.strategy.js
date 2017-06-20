@@ -12,8 +12,12 @@ module.exports = function() {
 			collection.findOne({
 				username: username
 			}, function(err, results) {
-				var user = results;
-				done(null, user);
+				if (results.password === password) {
+					var user = results;
+					done(null, user);
+				} else {
+					done('Bad Password', null);
+				}
 			});
 		});
 	}));
