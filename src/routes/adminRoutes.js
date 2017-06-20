@@ -30,7 +30,7 @@ var books = [{
     "isbn": "037571894X",
     "price": 9.01,
     "title": "A Wild Sheep Chase",
-    "read": false
+    "read": false,
     "bookId":11298
 }, {
     "author": "George  k  Crile",
@@ -39,7 +39,8 @@ var books = [{
     "isbn": "0802143415",
     "price": 10.5,
     "title": "Charlie Wilson's War",
-    "read": true
+    "read": true,
+    "bookId":11553283
 }];
 
 adminRouter.route('/addBooks').get(function(req, res) {
