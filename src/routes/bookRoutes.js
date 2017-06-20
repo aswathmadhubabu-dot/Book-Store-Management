@@ -9,42 +9,6 @@ bookRouter.use(function(req, res, next) {
     }
     next();
 });
-bookRouter.route('/').get(function(req, res) {
-    var url = 'mongodb://localhost:27017/libraryApp';
-    mongodb.connect(url, function(err, db) {
-        var collection = db.collection('books');
-        collection.find({}).toArray(function(err, results) {
-            res.render('book', {
-                title: 'Book',
-                nav: [{
-                    Link: '/authors',
-                    Text: 'Authors'
-                }],
-                Books: results
-            });
-        });
-    });
-});
-bookRouter.route('/:id').get(function(req, res) {
-    var id = new objectId(req.params.id);
-    var url = 'mongodb://localhost:27017/libraryApp';
-    mongodb.connect(url, function(err, db) {
-        var collection = db.collection('books');
-        collection.findOne({
-                _id: id
-            },
-            function(err, results) {
-                console.log(results);
-                res.render('bookView', {
-                    title: 'Book',
-                    nav: [{
-                        Link: '/authors',
-                        Text: 'Authors'
-                    }],
-                    Book: results
-                });
-            }
-        );
-    });
-});
+bookRouter.route('/').get();
+bookRouter.route('/:id').get();
 module.exports = bookRouter;
