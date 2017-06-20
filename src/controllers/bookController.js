@@ -1,10 +1,11 @@
 var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
+var JSAlert = require("js-alert");
 var bookController = function(bookService) {
 	var middleware = function(req, res, next) {
-		// if (!req.user) {
-		// 	res.redirect('/');
-		// }
+		if (!req.user) {
+			res.redirect('/');
+		}
 		next();
 	}
 	var getIndex = function(req, res) {
@@ -54,9 +55,7 @@ var bookController = function(bookService) {
 							Book: results
 						});
 					}
-
 					console.log(results);
-
 				}
 			);
 		});

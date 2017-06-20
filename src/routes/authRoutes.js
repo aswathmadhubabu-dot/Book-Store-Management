@@ -35,6 +35,7 @@ authRouter.route('/profile')
 	})
 	.get(function(req, res) {
 		console.log(req.body);
-		res.json(req.user);
+		//res.json(req.user);
+		res.render('auth');
 	});
 module.exports = authRouter;
