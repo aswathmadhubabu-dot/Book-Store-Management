@@ -15,9 +15,7 @@ var sql = require('mssql');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json({
-    type: 'application/*+json'
-}));
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 
@@ -26,8 +24,6 @@ app.use(session({
 }));
 
 require('./src/config/passport')(app);
-
-require('./src/strategies/local.strategy')();
 
 var sqlConfig = {
     'user': 'sa',
