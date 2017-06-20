@@ -3,7 +3,7 @@ var sql = require('mssql');
 var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var bookRouter = express.Router();
-var bookController = require('../controllers/bookController');
+var bookController = require('../controllers/bookController')(null);
 bookRouter.use(function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
