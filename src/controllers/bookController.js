@@ -33,27 +33,15 @@ var bookController = function(bookService) {
 				},
 				function(err, results) {
 					bookService.getBookById(results.bookId, function(err, book) {
-						if (results.bookId) {
-							results.book = book;
-							res.render('bookView', {
-								title: 'Book',
-								nav: [{
-									Link: '/authors',
-									Text: 'Authors'
-								}],
-								Book: results
-							});
-						} else {
-							res.render('bookView', {
-								title: 'Book',
-								nav: [{
-									Link: '/authors',
-									Text: 'Authors'
-								}],
-								Book: results
-							});
-						}
-
+						results.book = book;
+						res.render('bookView', {
+							title: 'Book',
+							nav: [{
+								Link: '/authors',
+								Text: 'Authors'
+							}],
+							Book: results
+						});
 					})
 					console.log(results);
 
