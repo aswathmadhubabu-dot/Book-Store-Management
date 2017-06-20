@@ -32,7 +32,7 @@ authRouter.route('/profile')
 			res.redirect('/');
 		}
 		next();
-	});
+	})
 .get(function(req, res) {
 	console.log(req.body);
 	res.json(req.user);
