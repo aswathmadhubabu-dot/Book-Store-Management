@@ -32,18 +32,19 @@ var bookController = function(bookService) {
 					_id: id
 				},
 				function(err, results) {
-					bookService.getBookById(results.bookId,{
+					bookService.getBookById(results.bookId, function(err, book) {
+						results.book = book;
 						res.render('bookView', {
-						title: 'Book',
-						nav: [{
-							Link: '/authors',
-							Text: 'Authors'
-						}],
-						Book: results
-					});	
+							title: 'Book',
+							nav: [{
+								Link: '/authors',
+								Text: 'Authors'
+							}],
+							Book: results
+						});
 					})
 					console.log(results);
-					
+
 				}
 			);
 		});
@@ -51,7 +52,7 @@ var bookController = function(bookService) {
 	return {
 		getIndex: getIndex,
 		getById: getById,
-		middleware : middleware
+		middleware: middleware
 	};
 };
 module.exports = bookController;
