@@ -3,8 +3,8 @@ var sql = require('mssql');
 var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var bookRouter = express.Router();
-var bookService = require('')
-var bookController = require('../controllers/bookController')(null);
+var bookService = require('../services/goodreadsService')();
+var bookController = require('../controllers/bookController')(bookService);
 bookRouter.use(bookController.middleware);
 bookRouter.route('/').get(bookController.getIndex);
 bookRouter.route('/:id').get(bookController.getById);
