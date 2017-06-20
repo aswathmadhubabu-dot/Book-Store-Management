@@ -16,7 +16,7 @@ var bookController = function(bookService) {
 				});
 			});
 		});
-	}
+	};
 	var getById = function(req, res) {
 		var id = new objectId(req.params.id);
 		var url = 'mongodb://localhost:27017/libraryApp';
@@ -38,10 +38,10 @@ var bookController = function(bookService) {
 				}
 			);
 		});
-	}
+	};
 	return {
 		getIndex: getIndex,
 		getById: getById
-	}
-}
+	};
+};
 module.exports = bookController;
