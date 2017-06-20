@@ -29,8 +29,9 @@ var books = [{
     "date": "2002-04-09",
     "isbn": "037571894X",
     "price": 9.01,
-    "title": "A Wild Sheep Chase: A Novel",
+    "title": "A Wild Sheep Chase",
     "read": false
+    "bookId":11298
 }, {
     "author": "George  k  Crile",
     "genre": "History",
