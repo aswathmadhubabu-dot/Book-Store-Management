@@ -2,9 +2,9 @@ var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var bookController = function(bookService) {
 	var middleware = function(req, res, next) {
-		if (!req.user) {
-			res.redirect('/');
-		}
+		// if (!req.user) {
+		// 	res.redirect('/');
+		// }
 		next();
 	}
 	var getIndex = function(req, res) {
@@ -47,7 +47,8 @@ var bookController = function(bookService) {
 	};
 	return {
 		getIndex: getIndex,
-		getById: getById
+		getById: getById,
+		middleware : middleware
 	};
 };
 module.exports = bookController;
