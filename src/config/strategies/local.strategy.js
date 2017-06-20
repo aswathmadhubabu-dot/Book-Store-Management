@@ -16,7 +16,7 @@ module.exports = function() {
 					var user = results;
 					done(null, user);
 				} else {
-					done('Bad Password', null);
+					done(null ,false, {message : 'bad password'});
 				}
 			});
 		});
