@@ -26,7 +26,14 @@ authRouter.route('/signIn', bodyParser.urlencoded({
 }), function(req, res) {
 	res.redirect('/auth/profile');
 });
-authRouter.route('/profile').get(function(req, res) {
+authRouter.route('/profile')
+	.all(function(req, res, next) {
+		if (!req.user) {
+			res.redirect('/');
+		}
+		next();
+	});
+.get(function(req, res) {
 	console.log(req.body);
 	res.json(req.user);
 });
