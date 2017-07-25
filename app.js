@@ -16,7 +16,7 @@ app.use(session({
 require('./src/config/passport')(app);
 var sqlConfig = {
     'user': 'sa',
-    'password': 'Ases573@gmail.com',
+    'password':'',
     'server': "ASWATH\\SQLEXPRESS", // You can use 'localhost\\instance' to connect to named instance
     'database': 'Book',
     'dialect': "mssql",
